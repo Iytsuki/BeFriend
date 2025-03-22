@@ -4,17 +4,22 @@ const container = document.querySelector(".container");
 // Function to move the "No" button
 function moveNoButton() {
     let maxX = container.clientWidth - noButton.clientWidth - 20;
-    let maxY = container.clientHeight - noButton.clientHeight - 80; // Prevent overlap with GIF
+    let maxY = container.clientHeight - noButton.clientHeight - 80; 
 
-    let newX = Math.random() * maxX;
-    let newY = Math.random() * maxY;
+    let newX = Math.max(0, Math.random() * maxX);
+    let newY = Math.max(0, Math.random() * maxY);
 
     noButton.style.transform = `translate(${newX}px, ${newY}px)`;
 }
 
 // Move button on hover (desktop) or tap (mobile)
 noButton.addEventListener("mouseover", moveNoButton);
-noButton.addEventListener("touchstart", moveNoButton); // Works on Android
+noButton.addEventListener("touchstart", moveNoButton, { passive: true }); // Works on Android
+
+noButton.addEventListener("touchstart", (event) => {
+    event.preventDefault();
+    moveNoButton();
+}, { passive: false });
 
 // Function when clicking "Yes"
 function handleYesClick() {
