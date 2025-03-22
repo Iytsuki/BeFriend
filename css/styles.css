@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Dancing+Script:wght@500&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #FFB6C1, #87CEFA); /* Sunset vibe */
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+}
+
+/* Main container */
+.container {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    position: relative;
+    width: 420px;
+    backdrop-filter: blur(10px); /* Soft dreamy effect */
+}
+
+/* Title */
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 28px;
+    font-weight: 500;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    font-weight: 350px;
+}
+
+h4 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 15px;
+    font-weight: 150px;
+}
+
+/* Button container */
+.buttons {
+    margin-top: 20px;
+    position: relative;
+    height: 50px; /* Fixed height to prevent layout shift */
+}
+
+/* Button styles */
+button {
+    padding: 12px 25px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: absolute;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Yes button */
+.yes-button {
+    background: linear-gradient(to right, #FFA07A, #FF4500); /* Sunset orange */
+    color: white;
+    left: 15%;
+}
+
+.yes-button:hover {
+    background: linear-gradient(to right, #FF4500, #FFA07A);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
+}
+
+/* No button */
+.no-button {
+    background: linear-gradient(to right, #1E90FF, #00BFFF); /* Travel-like blue */
+    color: white;
+    right: 15%;
+}
+
+.no-button:hover {
+    background: linear-gradient(to right, #00BFFF, #1E90FF);
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
+}
+
+/* GIF container */
+.gif-container {
+    margin-top: 60px;
+}
+
+.gif-container img {
+    width: 250px;
+    border-radius: 15px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
+}
+
+.gif-container img:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+}
