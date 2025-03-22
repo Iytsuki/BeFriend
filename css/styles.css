@@ -12,67 +12,69 @@ body {
     overflow: hidden;
 }
 
-/* Main container */
+/* Main container - Adjust for mobile */
 .container {
     text-align: center;
     background: rgba(255, 255, 255, 0.2);
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
     position: relative;
-    width: 420px;
-    backdrop-filter: blur(10px); /* Soft dreamy effect */
+    width: 90%;  /* Use percentage instead of fixed width */
+    max-width: 420px; /* Prevent it from being too large */
+    backdrop-filter: blur(10px);
 }
 
-/* Title */
+/* Title - Adjust font sizes for readability */
 h1 {
     font-family: 'Dancing Script', cursive;
-    font-size: 28px;
+    font-size: 26px; /* Smaller for mobile */
     font-weight: 500;
 }
 
 h2 {
     font-family: 'Dancing Script', cursive;
-    font-size: 22px;
-    font-weight: 350px;
+    font-size: 20px;
 }
 
 h4 {
     font-family: 'Dancing Script', cursive;
-    font-size: 15px;
-    font-weight: 150px;
+    font-size: 14px;
 }
 
-/* Button container */
+/* Button container - Stack buttons vertically for small screens */
 .buttons {
     margin-top: 20px;
     position: relative;
-    height: 50px; /* Fixed height to prevent layout shift */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px; /* Space between buttons */
 }
 
 /* Button styles */
 button {
     padding: 12px 25px;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: bold;
     border: none;
     border-radius: 25px;
     cursor: pointer;
     transition: all 0.3s ease;
-    position: absolute;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 80%; /* Make buttons stretch nicely on mobile */
+    max-width: 250px;
 }
 
 /* Yes button */
 .yes-button {
     background: linear-gradient(to right, #FFA07A, #FF4500); /* Sunset orange */
     color: white;
-    left: 15%;
 }
 
 .yes-button:hover {
     background: linear-gradient(to right, #FF4500, #FFA07A);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(255, 140, 0, 0.8);
 }
 
@@ -80,28 +82,46 @@ button {
 .no-button {
     background: linear-gradient(to right, #1E90FF, #00BFFF); /* Travel-like blue */
     color: white;
-    right: 15%;
+    position: absolute;
+    top: 50px;
 }
 
 .no-button:hover {
     background: linear-gradient(to right, #00BFFF, #1E90FF);
-    transform: scale(1.1);
+    transform: scale(1.05);
     box-shadow: 0 0 15px rgba(30, 144, 255, 0.8);
 }
 
 /* GIF container */
 .gif-container {
-    margin-top: 60px;
+    margin-top: 50px;
 }
 
 .gif-container img {
-    width: 250px;
+    width: 80%;
+    max-width: 250px;
     border-radius: 15px;
     transition: transform 0.3s, box-shadow 0.3s;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.4);
 }
 
 .gif-container img:hover {
-    transform: scale(1.08);
+    transform: scale(1.05);
     box-shadow: 0 8px 20px rgba(255, 255, 255, 0.6);
+}
+
+/* Make everything scale well on smaller screens */
+@media (max-width: 480px) {
+    h1 { font-size: 22px; }
+    h2 { font-size: 18px; }
+    h4 { font-size: 13px; }
+    
+    button {
+        font-size: 15px;
+        padding: 10px 20px;
+    }
+
+    .no-button {
+        top: 60px;
+    }
 }
